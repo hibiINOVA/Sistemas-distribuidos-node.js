@@ -15,7 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Middleware = void 0;
 const Jws_1 = require("../tools/Jws");
 const crypto_1 = __importDefault(require("crypto"));
+const console_1 = require("console");
 const simpleAuth = crypto_1.default.createHash('md5').update('aqui va tu contraseña').digest('hex');
+(0, console_1.log)(simpleAuth);
 const Middleware = (typeAuth) => {
     return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         //respuesta de error estandar

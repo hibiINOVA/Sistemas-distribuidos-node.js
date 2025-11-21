@@ -1,7 +1,8 @@
 import mysql, { Connection } from 'mysql2/promise';
-import { HOST_MYSQL, USER_MYSQL, PASSWORD_MYSQL, DATABASE_MYSQL } from '../../globals/Enviroment';
+import { HOST_MYSQL, USER_MYSQL, PASSWORD_MYSQL, DATABASE_MYSQL, PORT_MYSQL } from '../../globals/Enviroment';
 
 const dbConfig = {
+    port: PORT_MYSQL,
     host: HOST_MYSQL,
     user: USER_MYSQL,
     password: PASSWORD_MYSQL,

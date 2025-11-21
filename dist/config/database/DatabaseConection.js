@@ -16,6 +16,7 @@ exports.connect = void 0;
 const promise_1 = __importDefault(require("mysql2/promise"));
 const Enviroment_1 = require("../../globals/Enviroment");
 const dbConfig = {
+    port: Enviroment_1.PORT_MYSQL,
     host: Enviroment_1.HOST_MYSQL,
     user: Enviroment_1.USER_MYSQL,
     password: Enviroment_1.PASSWORD_MYSQL,

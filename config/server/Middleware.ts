@@ -1,8 +1,10 @@
 import {Request, Response, NextFunction} from 'express';
 import { Jwt } from '../tools/Jws';
 import crypto from 'crypto';
+import { log } from 'console';
 
 const simpleAuth = crypto.createHash('md5').update('aqui va tu contraseña').digest('hex');
+log(simpleAuth)
 
 const Middleware = (typeAuth: number) => {
     return async (req: Request, res: Response, next: NextFunction) => {
