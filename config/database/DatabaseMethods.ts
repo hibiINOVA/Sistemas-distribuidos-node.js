@@ -25,6 +25,13 @@ class DatabaseMethods {
             for(let sql of queries){
                 await connection.execute(sql.query, sql.params);
             }
+            await connection.commit();
+            return {error: false, msg: 'queries_excuted'};
+        }catch (error) {
+            if (connection) await connection.rollback();
+            return {error: true, msg: 'error_save'};
+        }finally{
+            if (connection) connection.end();
         }
     }
 }
